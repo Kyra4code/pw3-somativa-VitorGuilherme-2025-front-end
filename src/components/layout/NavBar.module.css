@@ -1,0 +1,20 @@
+.nav{
+    display: flex;
+    align-items: center;
+    background-color: rgb(206, 30, 3);
+    height: 200px;
+}
+
+.nav_icon{
+    width: 120px;
+    
+}
+
+.lista{
+    flex:0;
+}
+
+.items_labels{
+    align-items:flex-end;
+    color: white;
+}
