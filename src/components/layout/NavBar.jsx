@@ -22,6 +22,10 @@ export default function NavBar(){
                                 <li>Times</li>
                             </Link>
 
+                            <Link to="/login">
+                                <img src="./AccountIcon.png" alt="Icone de login" className={styles.nav_icon}/>
+                            </Link>
+
                         </div>
 
                 </ul>
