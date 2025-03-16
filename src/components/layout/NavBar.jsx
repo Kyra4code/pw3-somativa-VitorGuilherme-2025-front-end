@@ -5,12 +5,16 @@ export default function NavBar(){
     return(
         <>
             <nav className={styles.nav}>
-                
+
+                <div></div>
+
                 <ul className={styles.lista}>
-                    
+
+
                     <Link to="/">
                         <img src="./Home.png" alt="icone do home da pagina" className={styles.nav_icon}/>
                     </Link>
+
 
                         <div className={styles.items_labels}>
 
@@ -22,13 +26,17 @@ export default function NavBar(){
                                 <li>Times</li>
                             </Link>
 
-                            <Link to="/login">
-                                <img src="./AccountIcon.png" alt="Icone de login" className={styles.nav_icon}/>
-                            </Link>
 
                         </div>
 
                 </ul>
+
+                <div className={styles.nav_icon_login}> 
+                    <Link to="/login">
+                        <img src="./AccountIcon.png" alt="Icone de login" className={styles.nav_icon_login}/>
+                    </Link>
+                </div>
+
             </nav>
             <Outlet/>
         </>

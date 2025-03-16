@@ -4,6 +4,7 @@
     justify-content: center;
     padding: 10px;
     background-color: rgb(206, 30, 3);
+    justify-content: space-between;
 }
 
 .nav_icon{
@@ -37,4 +38,11 @@
 
 .items{
     list-style: none;
+}
+
+.nav_icon_login{
+    width: 30px;
+    height: auto;
+    cursor: url('../../../public/pokemon/PC\ Box\ Hand.cur'), pointer;
+    align-items: end;
 }

@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Container from './components/layout/Container';
 import NavBar from './components/layout/NavBar';
@@ -7,6 +8,9 @@ import Login from './components/pages/Login';
 import Teams from './components/pages/Teams';
 
 function App() {
+
+  const [OpenModal,setoOpenModal] = useState(false);
+
   return (
     <>
     <div>
@@ -21,7 +25,7 @@ function App() {
 
               <Route path='/teams' element={<Teams/>}/>
 
-              <Route path="/login" element={<Login/>}/>
+              <Route path="/login" element={<Login> <Home/> </Login> } />
 
             </Route>
           </Routes>
