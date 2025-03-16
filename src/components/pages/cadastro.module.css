@@ -1,0 +1,24 @@
+.icon_show_password{
+    position: absolute;
+    right: 5px;
+    background: none;
+    border: none;
+    cursor: url('../../../public/pokemon/PC\ Box\ Hand.cur'), pointer;
+    width: 10%;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    margin:0px;
+    padding:0px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}

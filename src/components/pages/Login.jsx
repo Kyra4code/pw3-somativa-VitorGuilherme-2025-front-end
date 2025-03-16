@@ -17,6 +17,12 @@ export default function Login({isOpen}) {
         navigate('/');
     }
 
+    function login(event){
+        event.preventDefault();
+        console.log(user, password);
+    }
+
+
     return (
         <Modal isOpen={openModal}>
 
@@ -28,20 +34,23 @@ export default function Login({isOpen}) {
 
                 <form>
 
-                    <input type="text" placeholder="Username" value={user}/>
+                    <input type="text" placeholder="Username" value={user} onChange={(event)=>{setUser(event.target.value)}}/>
 
                     <div style={{ position: "relative", display: "flex", alignItems: "center" }}>    
 
-                        <input type={showPass ? "text": "password"} placeholder="Password" style={{ paddingRight: "30px" }}/>
+                        <input type={showPass ? "text": "password"} placeholder="Password" style={{ paddingRight: "30px" }} value={password} onChange={(event)=>{setPassword(event.target.value)}}/>
 
                         <button className={styles.icon_show_password} onClick={(e)=>{ e.preventDefault(); setShowPass(!showPass)}}><img src={showPass? "./visivel.png": "foto.png"} style={{height:"70%", width: "70%"}}/></button>
                     </div>
 
-                    <button onClick={(event)=>{event.preventDefault()}}>Submit</button>
+                    <button onClick={login}>Submit</button>
 
                 </form>
 
+                <p>Não possui conta? <a onClick={()=>navigate('/cadastro')} style={{color: 'blue'}}>Cadastrar</a></p>
+
             </div>
+
         </Modal>
 
     )

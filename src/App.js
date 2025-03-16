@@ -6,6 +6,7 @@ import NavBar from './components/layout/NavBar';
 import Home from './components/pages/Home';
 import Login from './components/pages/Login';
 import Teams from './components/pages/Teams';
+import Cadastro from './components/pages/Cadastro';
 
 function App() {
 
@@ -26,6 +27,8 @@ function App() {
               <Route path='/teams' element={<Teams/>}/>
 
               <Route path="/login" element={<Login> <Home/> </Login> } />
+
+              <Route path='/cadastro' element={<Cadastro/>}/>
 
             </Route>
           </Routes>
