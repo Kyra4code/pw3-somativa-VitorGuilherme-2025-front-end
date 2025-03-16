@@ -1,0 +1,23 @@
+.input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+}
+
+.input input {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.input button {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: url('../../../public/pokemon/PC\ Box\ Hand.cur'),pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}

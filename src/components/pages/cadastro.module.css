@@ -7,7 +7,6 @@
     width: 10%;
     justify-content: center;
     align-items: center;
-    height: 80%;
     margin:0px;
     padding:0px;
 }
@@ -22,3 +21,8 @@
     margin: 0px;
     padding: 0px;
 }
+.button_close{
+    background-Color: transparent;
+    border-Color: transparent; 
+    cursor: url('../../../public/pokemon/PC\ Box\ Hand.cur'), pointer;
+  }

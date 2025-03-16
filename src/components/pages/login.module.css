@@ -11,3 +11,35 @@
   margin:0px;
   padding:0px;
 }
+
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0px;
+  padding: 5px;
+}
+
+.login h1{
+  text-align: center;
+  color: black;
+  font-size: 2.5rem;
+}
+
+.login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.button_close{
+  background-Color: transparent;
+  border-Color: transparent; 
+  cursor: url('../../../public/pokemon/PC\ Box\ Hand.cur'), pointer
+}

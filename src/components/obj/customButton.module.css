@@ -1,0 +1,26 @@
+.button button{
+    background-color: #b8b8b8;
+    border: none;
+    color: black;
+    padding: 9px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;    
+    margin: 2px 1px;
+    cursor: url('../../../public/pokemon/PC\ Box\ Hand.cur'),pointer;
+    border-radius: 12px;
+}
+
+.button button:hover {
+    transition: 0.9;
+    background-color: #494949;
+    box-shadow: 0 2px #999;
+    color: #f1f1f1;
+}
+
+.button button:active {
+    background-color: #f1f1f1;
+    box-shadow: 0 2px #666;
+    transform: translateY(1px);
+}

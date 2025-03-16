@@ -1,7 +1,10 @@
-export default function CustomButton(Click){
+import React from 'react';
+import styles from './customButton.module.css';
+
+export default function CustomButton({Click, title}){
     return(
-        <div>
-            <button onClick={Click}>Click me!</button>
+        <div className={styles.button}>
+            <button onClick={Click}>{title}</button>
         </div>
     )
 }

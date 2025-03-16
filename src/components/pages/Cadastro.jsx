@@ -2,6 +2,8 @@ import styles from "./cadastro.module.css";
 import Modal from "../layout/Modal";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import CustomButton from "../obj/CustomButton";
+import CustomInput from "../obj/CustomInput";
 
 export default function Cadastro() {
 
@@ -27,30 +29,50 @@ export default function Cadastro() {
 
             <div className="login">
 
-                <button onClick={close}>X</button>
+                <button onClick={close} className={styles.button_close}>X</button>
 
-                <h1>Login</h1>
+                <h1>Cadastrar conta</h1>
 
                 <form className={styles.form}>
                     
-                    <input type="text" placeholder="Email" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
+                    <CustomInput 
+                        type="text" 
+                        value={email} 
+                        setValue={(e)=>setEmail(e.target.value)} 
+                        placeholder="Email"
+                    />
 
-                    <input type="text" placeholder="Username" value={username} onChange={(e)=>{setUsername(e.target.value)}}/>
+                    <CustomInput 
+                        type="text" 
+                        placeholder="Username" 
+                        value={username} 
+                        setValue={(e)=>{setUsername(e.target.value)}}
+                    />  
 
-                    <div style={{ position: "relative", display: "flex", alignItems: "center" }}>    
+                    <CustomInput 
+                        type={showPass ? "text": "password"} 
+                        placeholder="Password" 
+                        value={password} 
+                        setValue={(e)=>{setPassword(e.target.value)}}
+                    >
+                        <button 
+                            className={styles.icon_show_password} 
+                            onClick={(e)=>{ e.preventDefault(); setShowPass(!showPass)}}
+                        >
 
-                        <input type={showPass ? "text": "password"} placeholder="Password" style={{ paddingRight: "30px" }} value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
-
-                        <button className={styles.icon_show_password} onClick={(e)=>{ e.preventDefault(); setShowPass(!showPass)}}>
-
-                            <img src={showPass? "./visivel.png": "foto.png"} style={{height:"70%", width: "71%"}}/>
+                            <img 
+                                src={showPass? "./visivel.png": "foto.png"} 
+                                style={{height:"85%", width: "100%"}}
+                            />
 
                         </button>
-                    </div>
+                    </CustomInput>
 
-                    <button onClick={Cadastrar}>Cadastrar</button>
+                    <CustomButton Click={Cadastrar} title="Cadastrar-se"/>
 
                 </form>
+
+                <p>Já possui conta? <a onClick={()=>navigate('/login')} style={{color: 'blue'}}>Login</a></p>
 
             </div>
         </Modal>

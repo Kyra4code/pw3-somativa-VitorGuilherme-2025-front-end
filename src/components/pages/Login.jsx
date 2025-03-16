@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import Modal from '../layout/Modal';
 import { useState } from 'react';
+import CustomInput from '../obj/CustomInput';
+import CustomButton from '../obj/CustomButton';
 import styles from './login.module.css';
 
 export default function Login({isOpen}) {
@@ -28,22 +30,31 @@ export default function Login({isOpen}) {
 
             <div className="login">
 
-                <button onClick={close} >X</button>
+                <button onClick={close} className={styles.button_close}>X</button>
 
-                <h1>Login</h1>
+                <h1 className={styles.title}>Login</h1>
 
-                <form>
+                <form className={styles.form}>
 
-                    <input type="text" placeholder="Username" value={user} onChange={(event)=>{setUser(event.target.value)}}/>
+                    <CustomInput 
+                        type="text" 
+                        placeholder="Username" 
+                        value={user}
+                        setValue={(event)=>{setUser(event.target.value)}}
+                    />
 
-                    <div style={{ position: "relative", display: "flex", alignItems: "center" }}>    
+                    <CustomInput 
+                        type={showPass ? "text": "password"} 
+                        placeholder="Password" 
+                        value={password} 
+                        setValue={(event)=>{setPassword(event.target.value)}}
+                    >
+                        <button className={styles.icon_show_password} onClick={(e)=>{ e.preventDefault(); setShowPass(!showPass)}}>
+                            <img src={showPass? "./visivel.png": "foto.png"} style={{height:"85%", width: "100%"}}/>
+                        </button>
+                    </CustomInput>
 
-                        <input type={showPass ? "text": "password"} placeholder="Password" style={{ paddingRight: "30px" }} value={password} onChange={(event)=>{setPassword(event.target.value)}}/>
-
-                        <button className={styles.icon_show_password} onClick={(e)=>{ e.preventDefault(); setShowPass(!showPass)}}><img src={showPass? "./visivel.png": "foto.png"} style={{height:"70%", width: "70%"}}/></button>
-                    </div>
-
-                    <button onClick={login}>Submit</button>
+                    <CustomButton Click={login} title="Conectar-se"/>
 
                 </form>
 
