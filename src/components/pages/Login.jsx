@@ -50,7 +50,9 @@ export default function Login({isOpen}) {
                         setValue={(event)=>{setPassword(event.target.value)}}
                     >
                         <button className={styles.icon_show_password} onClick={(e)=>{ e.preventDefault(); setShowPass(!showPass)}}>
-                            <img src={showPass? "./visivel.png": "foto.png"} style={{height:"85%", width: "100%"}}/>
+
+                            <img src={showPass? "./visivel.png": "foto.png"} style={{height:"65%", width: "100%"}}/>
+
                         </button>
                     </CustomInput>
 

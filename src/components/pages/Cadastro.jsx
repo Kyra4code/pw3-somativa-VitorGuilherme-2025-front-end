@@ -61,8 +61,8 @@ export default function Cadastro() {
                         >
 
                             <img 
-                                src={showPass? "./visivel.png": "foto.png"} 
-                                style={{height:"85%", width: "100%"}}
+                                src={showPass? "foto.png": "visivel.png"} 
+                                style={{height:"65%", width: "100%"}}
                             />
 
                         </button>

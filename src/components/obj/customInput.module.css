@@ -8,6 +8,11 @@
 .input input {
     flex: 1;
     padding-right: 40px;
+    padding-top: 0.5em;
+    padding-left:3.8px;
+    text-align:justify;
+    border-radius: 4px;
+    border-color: black;
 }
 
 .input button {
