@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CustomButton from "../obj/CustomButton";
 import CustomInput from "../obj/CustomInput";
+import axios from "axios";
 
 export default function Cadastro() {
 
@@ -16,12 +17,23 @@ export default function Cadastro() {
 
     async function Cadastrar(event){
         event.preventDefault();
-        console.log(username, password, email);
-    }
 
-    function close(){  
-        setOpenModal(false);
-        navigate('/');
+        const data = {
+            username: username,
+            email: email,
+            password: password
+        };
+
+        try{
+            const response = await axios.post("http://localhost:9000/user/createUser", data);
+            if(response.status === 200 || response.status === 201){
+                alert("Cadastro realizado com sucesso!");
+                navigate('/login');
+            }
+        }catch(error){
+            console.error("Erro ao cadastrar:", error);
+            alert("Erro ao cadastrar. Tente novamente.");
+        }
     }
 
     return (
@@ -29,7 +41,7 @@ export default function Cadastro() {
 
             <div className="login">
 
-                <button onClick={close} className={styles.button_close}>X</button>
+                <button onClick={ ()=>{setOpenModal(false); navigate("/")} } className={styles.button_close}>X</button>
 
                 <h1>Cadastrar conta</h1>
 
@@ -37,17 +49,17 @@ export default function Cadastro() {
                     
                     <CustomInput 
                         type="text" 
+                        placeholder="Username" 
+                        value={username} 
+                        setValue={(e)=>{setUsername(e.target.value)}}
+                    /> 
+
+                    <CustomInput 
+                        type="text" 
                         value={email} 
                         setValue={(e)=>setEmail(e.target.value)} 
                         placeholder="Email"
                     />
-
-                    <CustomInput 
-                        type="text" 
-                        placeholder="Username" 
-                        value={username} 
-                        setValue={(e)=>{setUsername(e.target.value)}}
-                    />  
 
                     <CustomInput 
                         type={showPass ? "text": "password"} 

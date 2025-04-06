@@ -3,6 +3,7 @@ import Modal from '../layout/Modal';
 import { useState } from 'react';
 import CustomInput from '../obj/CustomInput';
 import CustomButton from '../obj/CustomButton';
+import axios from 'axios';
 import styles from './login.module.css';
 
 export default function Login({isOpen}) {
@@ -21,11 +22,29 @@ export default function Login({isOpen}) {
 
     function login(event){
         event.preventDefault();
-        console.log(user, password);
+
+        const data = {
+            username: user,
+            password: password
+        };
+
+        try{
+            const response = axios.post("http://localhost:9000/user/login", data);
+            if(response.status === 200 || response.status === 201){
+                alert("Login realizado com sucesso!");
+                navigate('/home');
+            }
+        }
+        catch(error){
+            console.error("Erro ao fazer login:", error);
+            alert("Erro ao fazer login. Verifique suas credenciais.");
+        }
+
     }
 
 
     return (
+
         <Modal isOpen={openModal}>
 
             <div className="login">
@@ -65,6 +84,5 @@ export default function Login({isOpen}) {
             </div>
 
         </Modal>
-
     )
 }
