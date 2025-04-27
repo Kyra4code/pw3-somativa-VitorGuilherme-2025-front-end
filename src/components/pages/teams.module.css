@@ -2,5 +2,18 @@
     height: 100%;
     width: 100%;
     align-items: center;
+    display: flex;
     justify-content: center;
+    flex-direction: row;
+    background-color: #f0f0f0;
+    margin: 5px auto;
+    margin-left: 12px auto;
+    margin-right: 12px auto;
+}
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }

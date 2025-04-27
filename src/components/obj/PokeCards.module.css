@@ -1,7 +1,38 @@
-.container{
-    background-color: gainsboro;
-    width: 60%;
-    height: 300;
+.container {
+    background-color: #f8f9fa;
+    width: 250px;
+    height: 190px;
     text-align: center;
-    margin-top: 0.5%;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse o card */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.container img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain; /* Mantém a proporção da imagem */
+    margin: 0 auto; 
+}
+
+.container h3 {
+    font-size: 1.2rem;
+    color: #333; 
+    margin: 10px 0;
+}
+
+.container p {
+    font-size: 1rem;
+    color: #555; 
+    margin: 5px 0;
+}
+
+.container:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
