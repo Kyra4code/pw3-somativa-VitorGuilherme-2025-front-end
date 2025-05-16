@@ -2,11 +2,13 @@ import styles from "./teams.module.css";
 import PokeCards from '../obj/PokeCards'
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Teams(){
     
     const [pokeDados, setPokeDados] = useState([]);
 
+    const navigate = useNavigate();
 
     useEffect(()=>{
         const fetchData = async () => {
@@ -20,13 +22,13 @@ export default function Teams(){
         fetchData();
     },[])
 
-    {if(pokeDados.length === 0){
-        return <div className={styles.loading}>Carregando...</div>;
+    {if(!pokeDados){
+        return <div className={styles.loading}>Carregando...</div>
     }}
     return(
         <div className={styles.container}>
             {pokeDados.map((pokemon)=>(
-                <PokeCards PokeName={pokemon.data.name} PokeImage={pokemon.data.sprites.front_default}/>
+                <PokeCards key={pokemon.data.id} PokeName={pokemon.data.name} PokeImage={pokemon.data.sprites.front_default} onPress={()=>navigate(`/PokeDetails/${pokemon.data.id}`)}/>
             ))}
         </div>
     );

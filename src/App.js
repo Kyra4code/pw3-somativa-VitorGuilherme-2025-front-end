@@ -7,6 +7,7 @@ import Home from './components/pages/Home';
 import Login from './components/pages/Login';
 import Teams from './components/pages/Teams';
 import Cadastro from './components/pages/Cadastro';
+import PokeDetails from './components/pages/PokeDetalhes';
 
 function App() {
 
@@ -31,9 +32,16 @@ function App() {
               <Route path='/cadastro' element={<Cadastro/>}/>
 
             </Route>
+
           </Routes>
           
         </Container>
+
+        <Routes>
+
+          <Route path='/PokeDetails/:poke_id' element={<PokeDetails/>}/>
+          
+        </Routes>
 
       </BrowserRouter>
 
