@@ -5,7 +5,9 @@ import style from "./PokeCards.module.css"
 const PokeCards = ({PokeName, PokeImage, onPress}) => {
     return(
         <div className={style.container} onClick={onPress}>
-            <img src={PokeImage} alt={PokeName} className={style.img}/>
+            {PokeImage &&(
+                <img src={PokeImage} alt={PokeName} className={style.img}/>
+            )}
             <h5>{PokeName}</h5>
         </div>
     );

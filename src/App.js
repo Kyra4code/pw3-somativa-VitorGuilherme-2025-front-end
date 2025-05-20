@@ -7,7 +7,7 @@ import Home from './components/pages/Home';
 import Login from './components/pages/Login';
 import Teams from './components/pages/Teams';
 import Cadastro from './components/pages/Cadastro';
-import PokeDetails from './components/pages/PokeDetalhes';
+import PokeDetails from './components/pages/PokeDetails';
 
 function App() {
 
@@ -25,7 +25,7 @@ function App() {
 
               <Route path='/' element={<Home/>}/>
 
-              <Route path='/teams' element={<Teams/>}/>
+              <Route path='/pokemons' element={<Teams/>}/>
 
               <Route path="/login" element={<Login> <Home/> </Login> } />
 

@@ -1,0 +1,72 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.container img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin: 10px;
+}
+
+.container h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.container_tipo, .container_statusBase, .container_habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.container_tipo div, .container_statusBase div, .container_habilidades div {
+    background-color: #e0f7fa;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.container_tipo h5, .container_statusBase h5, .container_habilidades h5 {
+    margin: 0;
+    font-size: 16px;
+    color: #00796b;
+    font-weight: bold;
+}
+.container_tipo h5:hover, .container_statusBase h5:hover, .container_habilidades h5:hover{
+    color: #004d40;
+    cursor: url('../../../public/pokemon/PC\ Box\ Hand.cur'), auto;
+    transform: 5s;
+}
+
+.container_statusBase > div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+}
+
+.container_statusBase h5 {
+    font-size: 14px;
+    color: #333;
+}
+
+.container_habilidades div {
+    background-color: #ffe0b2;
+    color: #e65100;
+}

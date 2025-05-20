@@ -22,8 +22,8 @@ export default function NavBar(){
                                 <li className={styles.items}>Home</li>
                             </Link>
 
-                            <Link to="/teams">
-                                <li>Times</li>
+                            <Link to="/pokemons">
+                                <li>Pokemons</li>
                             </Link>
 
 

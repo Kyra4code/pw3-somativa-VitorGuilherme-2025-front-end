@@ -7,12 +7,13 @@ import { Navigate, useNavigate } from "react-router-dom";
 export default function Teams(){
     
     const [pokeDados, setPokeDados] = useState([]);
+    let pokeList = []
 
     const navigate = useNavigate();
 
     useEffect(()=>{
         const fetchData = async () => {
-            let pokeList = [];
+            if(pokeList.length == 150) return;
             for(let i = 1; i <= 151; i++){
                 pokeList.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
             }
