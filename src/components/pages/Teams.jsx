@@ -22,10 +22,14 @@ export default function Teams(){
     },[])
 
     return(
+        
+    <div>
 
         {pokeDados.map((pokemon)=>(
             <PokeCards key={pokemon.data.id} PokeName={pokemon.data.name} PokeImage={pokemon.data.sprites.front_default} onPress={()=>navigate(`/PokeDetails/${pokemon.data.id}`)}/>
         ))}
-    
+        
+    </div>
+
     );
 }
