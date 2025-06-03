@@ -5,13 +5,14 @@ import Container from './components/layout/Container';
 import NavBar from './components/layout/NavBar';
 import Home from './components/pages/Home';
 import Login from './components/pages/Login';
-import Teams from './components/pages/Teams';
+import Pokemons from './components/pages/Pokemons';
 import Cadastro from './components/pages/Cadastro';
+import Teams from './components/pages/Teams';
 import PokeDetails from './components/pages/PokeDetails';
 
 function App() {
 
-  const [OpenModal,setoOpenModal] = useState(false);
+  // const [OpenModal,setoOpenModal] = useState(false);
 
   return (
     <>
@@ -25,11 +26,13 @@ function App() {
 
               <Route path='/' element={<Home/>}/>
 
-              <Route path='/pokemons' element={<Teams/>}/>
+              <Route path='/pokemons' element={<Pokemons/>}/>
 
               <Route path="/login" element={<Login> <Home/> </Login> } />
 
               <Route path='/cadastro' element={<Cadastro/>}/>
+
+              <Route path='/times' element={<Teams/>}/>
 
             </Route>
 

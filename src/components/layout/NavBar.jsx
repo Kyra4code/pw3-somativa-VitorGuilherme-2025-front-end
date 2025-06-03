@@ -26,6 +26,10 @@ export default function NavBar(){
                                 <li>Pokemons</li>
                             </Link>
 
+                            <Link to="/times">
+                                <li>Times</li>
+                            </Link>
+
 
                         </div>
 

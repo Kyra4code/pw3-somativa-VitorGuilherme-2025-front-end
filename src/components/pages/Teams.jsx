@@ -1,36 +1,31 @@
-import styles from "./teams.module.css";
-import PokeCards from '../obj/PokeCards'
-import { useState, useEffect } from "react";
+import react, { useState, useEffect} from "react";
 import axios from "axios";
-import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Teams(){
-    
-    const [pokeDados, setPokeDados] = useState([]);
-    let pokeList = []
 
-    const navigate = useNavigate();
+    const [teams, setTeams] = useState([]);
+    const [pokeDados, setPokeDados] = useState([])
 
-    useEffect(()=>{
-        const fetchData = async () => {
-            if(pokeList.length == 150) return;
-            for(let i = 1; i <= 151; i++){
-                pokeList.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
-            }
-            await axios.all(pokeList.map(poke => axios.get(poke))).then((res) => setPokeDados(res));
+
+    useEffect(async()=>{
+        const response = await axios.get();
+
+        if(response){
+            setTeams(response.data)
         }
 
-        fetchData();
+        for( teams in teams){
+            const resp = axios.get(`https://pokeapi.co/api/v2/pokemon/${teams.name}/`)
+            pokeDados.push(resp.data)
+        }
+
     },[])
 
-    {if(!pokeDados){
-        return <div className={styles.loading}>Carregando...</div>
-    }}
     return(
-        <div className={styles.container}>
-            {pokeDados.map((pokemon)=>(
-                <PokeCards key={pokemon.data.id} PokeName={pokemon.data.name} PokeImage={pokemon.data.sprites.front_default} onPress={()=>navigate(`/PokeDetails/${pokemon.data.id}`)}/>
-            ))}
-        </div>
+
+        {pokeDados.map((pokemon)=>(
+            <PokeCards key={pokemon.data.id} PokeName={pokemon.data.name} PokeImage={pokemon.data.sprites.front_default} onPress={()=>navigate(`/PokeDetails/${pokemon.data.id}`)}/>
+        ))}
+    
     );
 }

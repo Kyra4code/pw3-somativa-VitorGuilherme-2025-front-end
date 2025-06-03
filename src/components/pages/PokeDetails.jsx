@@ -74,8 +74,12 @@ export default function PokeDetails() {
                 </div>
 
             </div>
-        </div>
-    );
 
+            <div>
+                <button onClick={()=>console.log("salvo")}>SALVAR</button>
+            </div>
+        </div>
+        
+    );
     }
 }
