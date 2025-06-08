@@ -29,7 +29,7 @@ export default function Login({isOpen}) {
         };
 
         try{
-            const response = axios.post("http://localhost:9000/user/login", data);
+            const response = axios.post("http://localhost:3000/user/login", data);
             if(response.status === 200 || response.status === 201){
                 alert("Login realizado com sucesso!");
                 navigate('/home');

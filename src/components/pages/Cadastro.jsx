@@ -25,7 +25,7 @@ export default function Cadastro() {
         };
 
         try{
-            const response = await axios.post("http://localhost:9000/user/createUser", data);
+            const response = await axios.post("http://localhost:3000/user/createUser", data);
             if(response.status === 200 || response.status === 201){
                 alert("Cadastro realizado com sucesso!");
                 navigate('/login');

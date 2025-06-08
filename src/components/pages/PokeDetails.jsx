@@ -23,6 +23,20 @@ export default function PokeDetails() {
         }
     },[poke_id])
 
+    async function SaveTeams(){
+        try{
+            const response = await axios.post("http://localhost:3000/teams/createTeams");
+            if(response){
+                console.log("Sucesso: " + response)
+            }
+
+        }
+        catch(e){
+            console.log(e)
+        }
+    }
+
+
     if(!Pokedata) return <div>Carregando</div>
 
     if(Pokedata){
@@ -76,7 +90,7 @@ export default function PokeDetails() {
             </div>
 
             <div>
-                <button onClick={()=>console.log("salvo")}>SALVAR</button>
+                <button onClick={SaveTeams}>SALVAR</button>
             </div>
         </div>
         

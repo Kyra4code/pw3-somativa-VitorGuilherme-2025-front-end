@@ -8,7 +8,7 @@ export default function Teams(){
 
 
     useEffect(async()=>{
-        const response = await axios.get();
+        const response = await axios.get("http://localhost:3000/teams");
 
         if(response){
             setTeams(response.data)
@@ -23,13 +23,13 @@ export default function Teams(){
 
     return(
         
-    <div>
+        <div>
 
-        {pokeDados.map((pokemon)=>(
-            <PokeCards key={pokemon.data.id} PokeName={pokemon.data.name} PokeImage={pokemon.data.sprites.front_default} onPress={()=>navigate(`/PokeDetails/${pokemon.data.id}`)}/>
-        ))}
-        
-    </div>
+            {pokeDados.map((pokemon)=>(
+                <PokeCards key={pokemon.data.id} PokeName={pokemon.data.name} PokeImage={pokemon.data.sprites.front_default} onPress={()=>navigate(`/PokeDetails/${pokemon.data.id}`)}/>
+            ))}
+            
+        </div>
 
     );
 }
